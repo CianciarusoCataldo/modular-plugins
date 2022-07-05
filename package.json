@@ -1,6 +1,6 @@
 {
   "name": "modular-plugins",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of various and useful plugins for modular-engine",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
