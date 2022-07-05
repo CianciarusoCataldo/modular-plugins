@@ -16,3 +16,24 @@ export {
   setModalForm,
   setModalVisiblity,
 } from "./plugins/modals/actions";
+
+export {
+  getLocalizationConfig,
+  getLanguage,
+  getLanguages,
+} from "./plugins/localization/selectors";
+export {
+  getModalView,
+  getModalContext,
+  getModalType,
+  isModalVisible,
+} from "./plugins/modals/selectors";
+export {
+  getAppBaseName,
+  getHomePage,
+  getRouterPluginConfig,
+  getRouterView,
+  getRoutes,
+  isHomePage,
+} from "./plugins/router/selectors";
+export { getUIView, isInDarkMode } from "./plugins/ui-manager/selectors";
