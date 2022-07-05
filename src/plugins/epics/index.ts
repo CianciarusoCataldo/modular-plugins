@@ -6,6 +6,7 @@ const epics: EpicsPlugin = () => {
   const epicMiddleware: any = createEpicMiddleware();
 
   return {
+    feature:"epics",
     create: (config) => ({
       field: "epics",
       content: config.epics || [],

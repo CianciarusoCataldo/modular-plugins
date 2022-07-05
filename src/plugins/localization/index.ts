@@ -16,6 +16,7 @@ const localization: LocalizationPlugin = () => {
     computeValue(() => navigator.language.split("-")[0], "") || "";
 
   return {
+    feature: "localization",
     redux: (config) => ({
       slice: "localization",
       reducerCases: localizationReducer,

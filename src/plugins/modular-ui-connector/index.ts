@@ -8,6 +8,7 @@ import { fillObject } from "modular-utils";
 import { defaultTheme, uiProperties } from "./ui-properties";
 
 const modularUiConnector: ModulaUiConnectorPlugin = () => ({
+  feature: "modularUiConnector",
   create: (config) => {
     const theme = fillObject({
       toFill: config.theme,

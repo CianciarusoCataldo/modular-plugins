@@ -5,6 +5,7 @@ import uiReducer from "./reducer";
 import * as actions from "./actions";
 
 const ui: UiPlugin = () => ({
+  feature: "ui",
   create: (config) => {
     const uiConfig = config.ui || {};
     return {

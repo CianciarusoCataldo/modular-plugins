@@ -29,6 +29,7 @@ const urlChecker: UrlCheckerPlugin = () => {
   }
 
   return {
+    feature: "urlChecker",
     create: (config) => {
       const urlCheckerConfig = config.urlChecker || {};
       const initialParams = Object.keys(queryParametersHandlers);

@@ -7,6 +7,7 @@ import initialState from "./initial-state";
 import modalReducer from "./reducer";
 
 const modal: ModularEnginePlugin = () => ({
+  feature: "modal",
   redux: (config) => ({
     slice: "modal",
     reducerCases: modalReducer,

@@ -15,6 +15,7 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
   });
 
 const router: RoutingPlugin = () => ({
+  feature: "router",
   create: (config) => {
     let routerConfig = config.router || {};
 
