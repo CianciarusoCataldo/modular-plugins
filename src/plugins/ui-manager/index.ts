@@ -19,7 +19,7 @@ const ui: UiPlugin = () => ({
   redux: (config) => ({
     initialState: { ...initialState, darkMode: config.ui.darkMode },
     slice: "ui",
-    reducerCases: uiReducer,
+    effects: uiReducer,
   }),
   format: (config, enabledPlugins) => {
     let input = { ...config };

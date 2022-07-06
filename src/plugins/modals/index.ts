@@ -10,7 +10,7 @@ const modal: ModularEnginePlugin = () => ({
   feature: "modal",
   redux: (config) => ({
     slice: "modal",
-    reducerCases: modalReducer,
+    effects: modalReducer,
     initialState,
   }),
   format: (config, enabledPlugins) => {

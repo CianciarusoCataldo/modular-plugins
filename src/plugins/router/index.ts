@@ -82,7 +82,7 @@ const router: RoutingPlugin = () => ({
   redux: (config) => ({
     reducer: routerReducer,
     slice: "router",
-    reducerCases: {
+    effects: {
       [actions.locationChange.type]: (state, action) => ({
         ...state,
         isHomePage: compareRoutes(window.location.pathname, state.homeRoute),

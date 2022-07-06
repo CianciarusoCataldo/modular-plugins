@@ -19,7 +19,7 @@ const localization: LocalizationPlugin = () => {
     feature: "localization",
     redux: (config) => ({
       slice: "localization",
-      reducerCases: localizationReducer,
+      effects: localizationReducer,
       initialState: {
         ...config.i18n,
         language,
