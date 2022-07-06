@@ -6,8 +6,6 @@
  * @copyright Cataldo Cianciaruso 2022
  */
 
-import { DeepPartial } from "modular-engine-types";
-
 import { RouterPluginConfig } from "./types";
 
 /**
@@ -24,15 +22,17 @@ export const extractHomePage = ({
   basename,
   routes,
   homePage,
-}: DeepPartial<RouterPluginConfig>) => {
+}: Partial<RouterPluginConfig>) => {
+  const actualRoutes = routes || {};
+  const keys = Object.keys(actualRoutes);
+
   let route = "";
-  const keys = routes ? Object.keys(routes) : [];
 
   if (keys.length > 0) {
-    if (homePage && routes[homePage]) {
-      route = routes[homePage];
+    if (homePage && actualRoutes[homePage]) {
+      route = actualRoutes[homePage];
     } else {
-      route = routes[keys[0]];
+      route = actualRoutes[keys[0]];
     }
   }
 

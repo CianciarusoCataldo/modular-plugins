@@ -7,7 +7,7 @@
  */
 
 /** types */
-import { ModularEngineReducerCases } from "modular-engine-types";
+import { ModularEngineEffects } from "modular-engine-types";
 
 /** internal */
 import { setDarkMode } from "./actions";
@@ -20,7 +20,7 @@ import { UIState } from "./types";
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-const uiReducer: ModularEngineReducerCases<UIState> = {
+const uiReducer: ModularEngineEffects<UIState> = {
   [setDarkMode.type]: (state, action) => ({
     ...state,
     darkMode: action.payload.newDarkMode,

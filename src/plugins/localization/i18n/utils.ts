@@ -34,7 +34,8 @@ export const setI18nLanguage = ({
 }: {
   language: string;
   callback?: (t: TFunction) => any;
-}) => i18nInstance.changeLanguage(language).then((t) => callback(t));
+}) =>
+  i18nInstance.changeLanguage(language).then((t) => callback && callback(t));
 
 /**
  * Init internal i18next system, using Config object parameters
@@ -57,7 +58,7 @@ export const initi18n = ({
 
   let usedNamespaces = [...i18nConfig.namespaces];
 
-  if (i18nConfig.titlesNamespace) {
+  if (titlesNamespace) {
     usedNamespaces.push(titlesNamespace);
   }
 

@@ -15,7 +15,7 @@ export type RouterPluginConfig = {
 };
 
 export type RoutingPlugin = ModularEnginePlugin<{
-  router?: DeepPartial<RouterPluginConfig> & {
+  router?: Partial<RouterPluginConfig> & {
     initialRouteKey?: string;
     onLocationChange?: ((
       path: string,

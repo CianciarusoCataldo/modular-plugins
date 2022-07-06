@@ -20,7 +20,7 @@ const modularUiConnector: ModulaUiConnectorPlugin = () => ({
     const darkColors = theme.dark || {};
 
     if (defaultColors.uiColor) {
-      uiStyle += `${uiProperties.default.background}: ${theme.default.uiColor}; `;
+      uiStyle += `${uiProperties.default.background}: ${defaultColors.uiColor}; `;
     }
 
     if (defaultColors.bodyColor) {
@@ -28,7 +28,7 @@ const modularUiConnector: ModulaUiConnectorPlugin = () => ({
     }
 
     if (darkColors.uiColor) {
-      uiStyle += `${uiProperties.dark.background}: ${theme.dark.uiColor}; `;
+      uiStyle += `${uiProperties.dark.background}: ${darkColors.uiColor}; `;
     }
 
     if (darkColors.bodyColor) {

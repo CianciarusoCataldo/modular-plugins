@@ -6,7 +6,7 @@
  * @copyright Cataldo Cianciaruso 2022
  */
 
-import { ModularEngineReducerCases } from "modular-engine-types";
+import { ModularEngineEffects } from "modular-engine-types";
 
 import { LocalizationState } from "./types";
 
@@ -19,7 +19,7 @@ import { changeLanguage } from "./actions";
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-const localizationReducer: ModularEngineReducerCases<LocalizationState> = {
+const localizationReducer: ModularEngineEffects<LocalizationState> = {
   [changeLanguage.type]: (state, action) => ({
     ...state,
     language: action.payload.language,

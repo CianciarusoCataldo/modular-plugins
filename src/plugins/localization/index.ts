@@ -34,33 +34,40 @@ const localization: LocalizationPlugin = () => {
     }),
 
     format: (config, enabledPlugins) => {
-      let inputConfig = { ...config };
+      let inputConfig = config || {};
+      let i18n = inputConfig.i18n || i18nDefaultSettings;
+
+      const ns = i18n.titlesNamespace || "";
+
+      let callBack;
+
+      if (enabledPlugins.router) {
+        callBack = (t) => {
+          updateTitle({
+            tFunction: t,
+            routeKey: config.router.initialRouteKey,
+            ns,
+            appName: inputConfig.appName,
+          });
+        };
+      }
 
       initi18n({
-        config: { ...inputConfig.i18n, language },
-        callBack:
-          enabledPlugins.router &&
-          ((t) => {
-            updateTitle({
-              tFunction: t,
-              routeKey: config.router.initialRouteKey,
-              ns: inputConfig.i18n.titlesNamespace,
-              appName: inputConfig.appName,
-            });
-          }),
+        config: { ...i18n, language },
+        callBack,
       });
 
       enabledPlugins.router &&
         inputConfig.router.onLocationChange.push((path, routeKey) => {
           updateTitle({
             routeKey,
-            ns: inputConfig.i18n.titlesNamespace,
+            ns,
             appName: inputConfig.appName,
             tFunction: i18nInstance.t,
           });
         });
 
-      inputConfig.redux.middlewares.push((action, store) => {
+      inputConfig.redux?.middlewares?.push((action, store) => {
         const state = store.getState();
 
         switch (action.type) {

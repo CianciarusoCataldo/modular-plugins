@@ -12,6 +12,6 @@ export const uiProperties = {
 } as const;
 
 export const defaultTheme: ModularUiTheme = {
-  default: { bodyColor: null, uiColor: null },
-  dark: { bodyColor: null, uiColor: null },
+  default: {},
+  dark: {},
 };

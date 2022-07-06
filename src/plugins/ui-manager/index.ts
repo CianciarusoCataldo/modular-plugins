@@ -28,7 +28,7 @@ const ui: UiPlugin = () => ({
         config: paramConfig,
         urlParam,
       }) => {
-        let queryValue = null;
+        let queryValue: boolean | null = null;
         switch (urlParam.toLowerCase()) {
           case "true": {
             queryValue = true;

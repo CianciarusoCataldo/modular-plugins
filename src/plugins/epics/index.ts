@@ -14,7 +14,7 @@ const epics: EpicsPlugin = () => {
     format: (config, enabledPlugins) => {
       let input = { ...config };
       const epics = input.epics || [];
-      input.redux.reduxMiddlewares.push(epicMiddleware);
+      input.redux?.reduxMiddlewares?.push(epicMiddleware);
       input.epics = epics;
 
       return input;

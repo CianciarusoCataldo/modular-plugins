@@ -21,20 +21,25 @@ const router: RoutingPlugin = () => ({
 
     routerConfig = {
       routes: routerConfig.routes || {},
+      homePage: routerConfig.homePage || "",
       basename: routerConfig.basename || "",
-      homeRoute: extractHomePage(routerConfig),
       onLocationChange: routerConfig.onLocationChange || [],
     };
+
+    const homeRoute = extractHomePage(routerConfig);
+
+    const routes = routerConfig.routes || {};
 
     return {
       field: "router",
       content: {
         ...routerConfig,
+        homeRoute,
         initialRouteKey:
-          Object.keys(routerConfig.routes).find((key) =>
+          Object.keys(routes).find((key) =>
             compareRoutes(
               window.location.pathname,
-              routerConfig.basename + routerConfig.routes[key]
+              routerConfig.basename + routes[key]
             )
           ) || routerConfig.homePage,
       },
@@ -70,7 +75,7 @@ const router: RoutingPlugin = () => ({
 
       inputConfig.urlChecker.after.push("to");
     }
-    inputConfig.redux.reduxMiddlewares.push(routerMiddleware);
+    inputConfig?.redux?.reduxMiddlewares?.push(routerMiddleware);
 
     return inputConfig;
   },
@@ -103,7 +108,7 @@ const router: RoutingPlugin = () => ({
     let input: ModularEngineConfig = { ...config };
     const onLocationChangeCallbacks = input.router.onLocationChange;
     const routeKeys = Object.keys(input.router.routes);
-    input.redux.middlewares.push((action, store) => {
+    input.redux?.middlewares?.push((action, store) => {
       if (action.type === actions.locationChange.type) {
         onLocationChangeCallbacks.forEach((callback) => {
           callback(
@@ -124,7 +129,7 @@ const router: RoutingPlugin = () => ({
   after: ({ config, store }) => {
     return {
       ...config,
-      history: createReduxHistory(store),
+      history: store && createReduxHistory(store),
     };
   },
 });
