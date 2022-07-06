@@ -10,6 +10,12 @@
 
 ## Changes
 
+<br>
+
+### 0.2.0
+
+- Modular-engine plugins moved to dedicated repos
+
 
 <br>
 

@@ -1,33 +1,17 @@
-export { default as epics } from "./plugins/epics";
-export { default as localization } from "./plugins/localization";
-export { default as modals } from "./plugins/modals";
-export { default as modularUiConnector } from "./plugins/modular-ui-connector";
-export { default as routing } from "./plugins/router";
-export { default as ui } from "./plugins/ui-manager";
-export { default as urlChecker } from "./plugins/url-checker";
+export { epicsPlugin } from "modular-plugin-epics";
 
-export { changeLanguage } from "./plugins/localization/actions";
-export { locationChange, goBack, requestRoute } from "./plugins/router/actions";
-export { setDarkMode } from "./plugins/ui-manager/actions";
-export {
-  openModal,
-  closeModal,
-  setModalContext,
-  setModalForm,
-  setModalVisiblity,
-} from "./plugins/modals/actions";
+export { urlCheckerPlugin } from "modular-plugin-url-checker";
 
 export {
+  changeLanguage,
   getLocalizationConfig,
   getLanguage,
   getLanguages,
-} from "./plugins/localization/selectors";
-export {
-  getModalView,
-  getModalContext,
-  getModalType,
-  isModalVisible,
-} from "./plugins/modals/selectors";
+  localizationPlugin,
+} from "modular-plugin-localization";
+
+export { themerPlugin } from "modular-plugin-themer";
+
 export {
   getAppBaseName,
   getHomePage,
@@ -35,5 +19,28 @@ export {
   getRouterView,
   getRoutes,
   isHomePage,
-} from "./plugins/router/selectors";
-export { getUIView, isInDarkMode } from "./plugins/ui-manager/selectors";
+  routerPlugin,
+  locationChange,
+  goBack,
+  requestRoute,
+} from "modular-plugin-router";
+
+export {
+  getUIView,
+  isInDarkMode,
+  setDarkMode,
+  uiPlugin,
+} from "modular-plugin-ui";
+
+export {
+  closeModal,
+  getModalView,
+  getModalContext,
+  getModalType,
+  isModalVisible,
+  modalPlugin,
+  openModal,
+  setModalContext,
+  setModalForm,
+  setModalVisiblity,
+} from "modular-plugin-modal";
