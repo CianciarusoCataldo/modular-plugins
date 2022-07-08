@@ -1,6 +1,11 @@
 export { epicsPlugin } from "modular-plugin-epics";
 
-export { urlCheckerPlugin } from "modular-plugin-url-checker";
+export {
+  urlCheckerPlugin,
+  UrlCheckerPlugin,
+  UrlCheckerQueryHandler,
+  UrlCheckerSettings,
+} from "modular-plugin-url-checker";
 
 export {
   changeLanguage,
@@ -10,7 +15,12 @@ export {
   localizationPlugin,
 } from "modular-plugin-localization";
 
-export { themerPlugin } from "modular-plugin-themer";
+export {
+  themerPlugin,
+  ThemerPlugin,
+  ThemerTheme,
+  ThemerThemeField,
+} from "modular-plugin-themer";
 
 export {
   getAppBaseName,
@@ -23,6 +33,9 @@ export {
   locationChange,
   goBack,
   requestRoute,
+  compareRoutes,
+  RouterPluginConfig,
+  RouterPluginState,
 } from "modular-plugin-router";
 
 export {
@@ -43,4 +56,5 @@ export {
   setModalContext,
   setModalForm,
   setModalVisiblity,
+  ModalPluginState,
 } from "modular-plugin-modal";
