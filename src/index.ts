@@ -3,8 +3,8 @@ export { epicsPlugin } from "modular-plugin-epics";
 export {
   urlCheckerPlugin,
   UrlCheckerPlugin,
-  UrlCheckerQueryHandler,
-  UrlCheckerSettings,
+  UrlCheckerPluginQueryHandler,
+  UrlCheckerPluginSettings,
 } from "modular-plugin-url-checker";
 
 export {
@@ -17,9 +17,7 @@ export {
 
 export {
   themerPlugin,
-  ThemerPlugin,
-  ThemerTheme,
-  ThemerThemeField,
+  ThemerPluginTheme,
 } from "modular-plugin-themer";
 
 export {
@@ -32,8 +30,7 @@ export {
   routerPlugin,
   locationChange,
   goBack,
-  requestRoute,
-  compareRoutes,
+  goTo,
   RouterPluginConfig,
   RouterPluginState,
 } from "modular-plugin-router";
