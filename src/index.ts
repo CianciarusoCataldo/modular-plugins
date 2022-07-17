@@ -21,7 +21,6 @@ export {
 } from "modular-plugin-themer";
 
 export {
-  getAppBaseName,
   getHomePage,
   getRouterPluginConfig,
   getRouterView,
